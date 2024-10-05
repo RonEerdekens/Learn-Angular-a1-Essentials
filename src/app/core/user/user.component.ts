@@ -18,10 +18,10 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) id!: String;
-  @Input({ required: true }) avatar!: String;
-  @Input({ required: true }) name!: String;
-  @Output() select = new EventEmitter<String>();
+  @Input({ required: true }) id!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
+  @Output() select = new EventEmitter<string>();
   //select = output<String>();
   // avatar = input.required<String>();
   // name = input.required<String>();
