@@ -14,4 +14,7 @@ import { DUMMY_USERS } from './dummy-user';
 export class AppComponent {
   title = 'Essentials';
   users = DUMMY_USERS;
+  onSelectedUser(id: string) {
+    console.log('Selected user id:', id);
+  }
 }
