@@ -7,6 +7,8 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { DUMMY_USERS } from '../../dummy-user';
+import { User } from './user.model';
+import { NgClass } from '@angular/common';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -15,16 +17,11 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 //   avatar: string;
 //   name: string;
 // }
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
@@ -39,6 +36,7 @@ export class UserComponent {
   //select = output<String>();
   // avatar = input.required<String>();
   // name = input.required<String>();
+  @Input({ required: true }) selected!: boolean;
   imagePath() {
     return `assets/users/${this.user.avatar}`;
   }
